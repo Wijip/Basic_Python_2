@@ -1,12 +1,12 @@
 import csv
 import time
 
-with open('Dataset-1.csv') as csv_file: # membuka file .csv
-    csv_reader = csv.reader(csv_file, delimiter=",")  #membaca data didalam file yang tedapat 2 parameter yaitu csv_file dan delimiter, dimana fungsi delimiter untuk memberikan permisah, pada contoh kali ini menggunakan tanda ","
-    print(csv_reader)
-    for row in csv_reader: # perulangan yang digunakan untuk membaca tiap baris data pada file
-        print(row)
-        time.sleep(1)
+# with open('Dataset-1.csv') as csv_file: # membuka file .csv
+#     csv_reader = csv.reader(csv_file, delimiter=",")  #membaca data didalam file yang tedapat 2 parameter yaitu csv_file dan delimiter, dimana fungsi delimiter untuk memberikan permisah, pada contoh kali ini menggunakan tanda ","
+#     print(csv_reader)
+#     for row in csv_reader: # perulangan yang digunakan untuk membaca tiap baris data pada file
+#         print(row)
+#         time.sleep(1)
 
 
 
