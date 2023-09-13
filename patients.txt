@@ -1,0 +1,5 @@
+Karina - Severe dehydration
+Jake - No dehydration
+Julia - Some dehydration
+Patients1 - Severe dehydration
+Patients2 - No dehidration

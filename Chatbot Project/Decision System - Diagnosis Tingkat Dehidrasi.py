@@ -1,5 +1,3 @@
-import time
-
 welcome_prompt = "Welcome doctor, what would you like to do today?\n" \
                 "- To list all patients, press 1\n- to run a new diagnosis, press 2\n" \
                 "- to quit, press q\n"
@@ -21,26 +19,14 @@ severe_dehydration = "Severe dehydration"
 some_dehydration = "Some dehydration"
 no_dehydration = "No dehidration"
 
-# patients_and_diagnosis =[
-#     "Karina - Severe dehydration",
-#     "Jake - No dehydration",
-#     "Julia - Some dehydration"
-# ]
+patients_adn_diagnosis =[
+    "Karina - Severe dehydration",
+    "Jake - No dehydration",
+    "Julia - Some dehydration"
+]
 
-def read_data_form_file():
-    try:
-        with open('patients.txt', 'r') as file:
-            return file.read().splitlines()
-    except FileNotFoundError:
-        return []
-
-def save_data_ti_file(data):
-    with open("patients.txt", "w") as file:
-        file.write("\n".join(data))
-
-patients_and_diagnosis = read_data_form_file()
 def list_patients():
-    for patiens in patients_and_diagnosis:
+    for patiens in patients_adn_diagnosis:
         print(patiens)
 
 def save_new_diagnosis(name, diagnosis):
@@ -48,8 +34,7 @@ def save_new_diagnosis(name, diagnosis):
         print(error_message)
         return
     final_diagnosis = name + " - " + diagnosis
-    patients_and_diagnosis.append(final_diagnosis)
-    save_data_ti_file(patients_and_diagnosis)
+    patients_adn_diagnosis.append(final_diagnosis)
     print(f"Final diagnosis : {final_diagnosis} \n")
 
 def assess_eyes(eyes):
@@ -89,8 +74,6 @@ def main():
         selection = input(welcome_prompt)
         if selection == "1":
             list_patients()
-            time.sleep(5)
-            print("\n")
         elif selection == "2":
             start_new_diagnosis()
         elif selection == "q":

@@ -21,12 +21,6 @@ severe_dehydration = "Severe dehydration"
 some_dehydration = "Some dehydration"
 no_dehydration = "No dehidration"
 
-# patients_and_diagnosis =[
-#     "Karina - Severe dehydration",
-#     "Jake - No dehydration",
-#     "Julia - Some dehydration"
-# ]
-
 def read_data_form_file():
     try:
         with open('patients.txt', 'r') as file:
