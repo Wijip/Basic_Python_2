@@ -15,6 +15,8 @@ def login():
 # Membuat window
 window = tk.Tk()
 window.title("Login")
+window.geometry('300x200')
+window.resizable(False, False)
 
 # Label Username
 username_label = tk.Label(window, text="Username:")
