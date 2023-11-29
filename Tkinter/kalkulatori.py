@@ -28,7 +28,7 @@ window.geometry('250x300')
 window.resizable(False, False)
 
 # Entry untuk menampilkan hasil perhitungan
-entry = tk.Entry(window, width=20, borderwidth=5)
+entry = tk.Entry(window, width=25, borderwidth=5)
 entry.grid(row=0, column=0, columnspan=4)
 
 # Membuat tombol-tombol kalkulator
