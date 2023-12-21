@@ -7,7 +7,7 @@ def sum_10_values(*data):
 
 avg_10_value = lambda total : total / 10
 
-value = (5,4,6,7,3,4,5,7,8,9)
+value = [5,4,6,7,3,4,5,7,8,9]
 
 total = sum_10_values(*value)
 

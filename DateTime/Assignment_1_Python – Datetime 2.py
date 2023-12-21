@@ -14,6 +14,10 @@ zona2 = Zone.timezone('America/New_York')
 zona3 = Zone.timezone("Europe/London")
 zona4 = Zone.timezone('Australia/Sydney')
 
+waktu = input()
+time.sleep(waktu) #-> detik
+# total_detik = (menit * 60) + detik)
+
 waktu_zona1 = now.astimezone(zona1).strftime("%H:%M:%S")
 waktu_zona2 = now.astimezone(zona2).strftime("%H:%M:%S")
 waktu_zona3 = now.astimezone(zona3).strftime("%H:%M:%S")
