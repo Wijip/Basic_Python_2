@@ -12,6 +12,8 @@ with open(file_path, 'r') as file:
             female_data.append(line)
 
 
+print(male_data)
+print(female_data)
 with open('filter/Laki-laki.csv', 'w') as male_file:
     male_file.writelines(male_data)
 
