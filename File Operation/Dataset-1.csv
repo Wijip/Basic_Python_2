@@ -1,13 +1,7 @@
-No,Nama,Course,Kota
-1,John,Python Basic Programming,Surabaya
-2,Dani,Coding Explorer 3.0,Denpasar
-3,Sisca,Web Design HTML CSS Javascript,Denpasar
-4,Robert,Python Basic Programming,Surabaya
-5,Seith,Web Programming,Surabaya
-6,Lula,Web Design HTML CSS Javascript,Denpasar
-7,Roky,Web Design HTML CSS Javascript,Denpasar
-8,Bibi,Python Basic Programming,Denpasar
-9,Ruth,Coding Explorer 5.0,Surabaya
-10,Santi,Python Basic Programming,Denpasar
-11,Faisal,Coding Explorer 1.0,Surabaya
-12,Via,Python Basic Programming,Denpasar
+import csv
+
+with open('Dataset.csv') as csv_file:
+    csv_reader = csv.reader(csv_file, delimiter=",")
+    print(csv_reader)
+    for row in csv_reader:
+        print(row)
