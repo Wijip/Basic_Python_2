@@ -6,6 +6,7 @@ ganjil = 0
 
 for line in data:
     num = int(line.strip())
+    print(num)
     if num % 2 == 0:
         genap += 1
     else:

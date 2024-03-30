@@ -14,7 +14,7 @@ with open(filename, 'r') as file:
         words = line.splitlines()
         new_words = []
         for word in words:
-            word = word.lower()
+            # word = word.lower()
             if "gunung" or "Gunung" in word:
                 count += 1
                 word1 = word.replace("gunung", "pegunungan")
