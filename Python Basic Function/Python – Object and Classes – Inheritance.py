@@ -37,16 +37,16 @@ class Pekerja(Manusia):
     def perkenalan(self):
         print(f'Halo , nama saya {self.nama} dengan tinggi {self.tinggi} cm dan berat {self.berat} Kg dan bekerja sebagai {self.pekerjaan}dan sudah bekerja selama {self.tahun_kerja}')
 
-class Pelajar(Manusia):
-    def __init__(self, nama, tinggi, berat, sekolah):
-        Manusia.__init__(self, nama, tinggi, berat)
-        self.sekolah = sekolah
-
-    def perkenalan(self):
-        print(f'Halo, nama saya {self.nama} dengan tinggi {self.tinggi} cm dan berat {self.berat} kg dan saya siswa dari sekolah {self.sekolah}')
+# class Pelajar(Manusia):
+#     def __init__(self, nama, tinggi, berat, sekolah):
+#         Manusia.__init__(self, nama, tinggi, berat)
+#         self.sekolah = sekolah
+#
+#     def perkenalan(self):
+#         print(f'Halo, nama saya {self.nama} dengan tinggi {self.tinggi} cm dan berat {self.berat} kg dan saya siswa dari sekolah {self.sekolah}')
 
 clara = Pekerja("Clara", 160, 45, "Dokter", 10)
 clara.perkenalan()
 
-diana = Pelajar("Diana", 156, 42, "SMP Negeri 1 Surabaya")
-diana.perkenalan()
+# diana = Pelajar("Diana", 156, 42, "SMP Negeri 1 Surabaya")
+# diana.perkenalan()

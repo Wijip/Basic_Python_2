@@ -1,12 +1,10 @@
-def jumlah(*data):
-    total = sum(data)
-    avg = total / 10
-    return total, avg
+class Manusia:
+    def __init__(self, nama, tinggi, berat):
+        self.nama = nama
+        self.tinggi = tinggi
+        self.berat = berat
+    def perkenalan(self):
+        print("Halo, nama saya ", self.nama, "dengan tinggi ", self.tinggi, "cm dan berat ", self.berat, "kg")
 
-data = []
-for i in range(10):
-    data.append(int(input("Masukkan angka: ")))
-total_angka = jumlah(*data)
-print("Total: ", total_angka)
-rata_rata = (lambda total, length: total/length)(total_angka, len(data))
-print("Rata-rata: ", rata_rata)
+robert = Manusia("Robert", 175, 68)
+robert.perkenalan()

@@ -16,6 +16,7 @@ class SistemInformasiPegawai:
         gaji = input("Masukkan gaji pegawai: ")
         pegawai_baru = Pegawai(nama, status_kerja, tahun_masuk, gaji)
         self.pegawai_list.append(pegawai_baru)
+        # self.pegawai_list.update(pegawai_baru)
 
     def edit_pegawai(self):
         nama = input("Masukkan nama pegawai yang ingin diubah datanya: ")
