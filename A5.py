@@ -1,20 +1,28 @@
-def fahrenheit():
-    fahren = (9/5 * celc) + 32
-    print("Suhu dalam Fahrenheit:", fahren)
+data = [
+    [1,2],
+    [9,5]
+]
 
-def kelvin():
-    kel = celc + 273
-    print("Suhu dalam Kelvin:", kel)
+data1 = 1,5,3,"data"
+data2 = ("askla", "data 2")
+data3 = data1 + data2
+print(data3)
 
+#tidak bisa rubah, di hapus, di tambah
 
-# celc = int(input("Masukkan suhu Celcius: "))
-# fahrenheit()
-# kelvin()
-def main():
-    global celc
-    celc = int(input("Masukkan Celcius "))
-    fahrenheit()
-    kelvin()
+minuman = (
+    ("Kopi","Susu","Teh"),
+    ("Jus Apel","Jus Melon","Jus Jeruk"),
+    ("Es Kopi","Es Campur","Es Teler")
+)
+print(minuman[1][1])
 
-if __name__ == "__main__":
-    main()
+item_web = "KodingAkademi", 123, "https://www.kodingakademi.id/"
+
+username, password, link = item_web
+print(username)
+print(password)
+print(link)
+
+for i in item_web:
+    print(i)

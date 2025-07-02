@@ -1,4 +1,4 @@
-from datetime import datetime,timezone
+from datetime import datetime,timezone, timedelta
 import pytz as Zone
 import time
 
@@ -30,11 +30,18 @@ print("\nNomor 2")
 print(f'Waktu Saat ini di America di Zona (America/New_York) : {waktu_zona2}')
 
 print("\nNomor 3")
-print(f'Jika di zona (America/New_York) sekarang jam {waktu_zona2}\nmaka indonesia di zona (Asia/Jakarta) saat ini jam {waktu_zona1}'
-      f'\nkarena di amerika memiliki zona waktu yang salah satunya Eastern Standard Time (EST) yang mencakup'
-      f'\nkota-kota seperti New York dan Washington D.C'
-      f'\nsedangkan Indonesia memiliki zona waktu salah satunya Waktu Indonesia Barat (WIB) yang mencakup'
-      f'\nkota kota seperti Jakarta, Bandung. perbedaan antara EST dan WIB adalah 12 jam')
+# print(f'Jika di zona (America/New_York) sekarang jam {waktu_zona2}\nmaka indonesia di zona (Asia/Jakarta) saat ini jam {waktu_zona1}'
+#       f'\nkarena di amerika memiliki zona waktu yang salah satunya Eastern Standard Time (EST) yang mencakup'
+#       f'\nkota-kota seperti New York dan Washington D.C'
+#       f'\nsedangkan Indonesia memiliki zona waktu salah satunya Waktu Indonesia Barat (WIB) yang mencakup'
+#       f'\nkota kota seperti Jakarta, Bandung. perbedaan antara EST dan WIB adalah 12 jam')
+amerika_time = datetime.strptime("12:43", "%H:%M")
+amerika_offset = -5
+
+indonesia_offset = 7
+time_difference = indonesia_offset - amerika_offset
+indonesia_time = amerika_time + timedelta(hours=time_difference)
+print("Waktu Indonesia:", indonesia_time.strftime("%H:%M"))
 
 print("\nNomor 4")
 menit = int(input("Masukkan Menit : "))
