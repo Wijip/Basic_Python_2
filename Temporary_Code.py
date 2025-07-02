@@ -1,43 +1,35 @@
-import csv
+import re
 
-def is_number(s):
-    s = s.strip()
-    return s.replace('.', '', 1).isdigit()
+def mask_phone(match):
+    s = match.group()
+    digits = re.findall(r'\d', s)
+    n = len(digits)
+    if n < 10 or n > 13:
+        return s               # bukan nomor telepon target
+    # hitung berapa digit yang harus di-mask
+    to_mask = n - 4
+    masked = []
+    cnt = 0
+    for ch in s:
+        if ch.isdigit():
+            if cnt < to_mask:
+                masked.append('*')
+            else:
+                masked.append(ch)
+            cnt += 1
+        else:
+            masked.append(ch)
+    return ''.join(masked)
 
-def stats(input_file):
-    with open(input_file, newline='', encoding='utf-8') as infile:
-        reader = csv.DictReader(infile)
-        fields = reader.fieldnames
-
-        # Inisialisasi struktur data
-        stats = {}
-        for f in fields:
-            stats[f] = {'count': 0, 'sum': 0.0, 'min': None, 'max': None}
-
-        # Hitung
-        for row in reader:
-            for f in fields:
-                val = row[f]
-                if is_number(val):
-                    num = float(val)
-                    s = stats[f]
-                    s['count'] += 1
-                    s['sum'] += num
-                    s['min'] = num if s['min'] is None or num < s['min'] else s['min']
-                    s['max'] = num if s['max'] is None or num > s['max'] else s['max']
-
-    # Tulis ringkasan statistik
-    output_file = input_file.replace('.csv', '_stats.csv')
-    with open(output_file, 'w', newline='', encoding='utf-8') as outfile:
-        writer = csv.writer(outfile)
-        writer.writerow(['Column', 'Count', 'Sum', 'Average', 'Min', 'Max'])
-        for f, s in stats.items():
-            if s['count'] > 0:
-                avg = s['sum'] / s['count']
-                writer.writerow([f, s['count'], s['sum'], f"{avg:.2f}", s['min'], s['max']])
-
-    print(f"Statistik selesai. Output: {output_file}")
+def main():
+    inp = "contacts.txt"
+    out = "contacts_masked.txt"
+    text = open(inp, encoding='utf-8').read()
+    # cari substring yang mengandung digit+separator panjang ≥10
+    pattern = re.compile(r'[\d\-\+\s\(\)]{10,}')
+    result = pattern.sub(mask_phone, text)
+    open(out, 'w', encoding='utf-8').write(result)
+    print(f"Masking selesai. Cek file {out}")
 
 if __name__ == "__main__":
-    fn = input("File CSV untuk di-statistik: ")
-    stats(fn)
+    main()

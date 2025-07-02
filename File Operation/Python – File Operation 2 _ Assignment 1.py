@@ -21,3 +21,4 @@ with open('filter/Perempuan.csv', 'w') as female_file:
     female_file.writelines(female_data)
 
 print("Filtering dan penyimpanan berhasil")
+
