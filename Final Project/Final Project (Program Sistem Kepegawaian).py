@@ -48,7 +48,7 @@ class SistemInformasiPegawai:
 sistem_informasi = SistemInformasiPegawai()
 
 while True:
-    print("\n======Sistem Informasi Pegawai======")
+    print("\n======Sistem Informasi Pegawai ======")
     print("1. Tambah Pegawai")
     print("2. Edit Pegawai")
     print("3. Tampilkan Pegawai")
